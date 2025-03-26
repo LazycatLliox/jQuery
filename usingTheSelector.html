@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using the Selector With jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li id="first" class="one">Do Homework</li>
+        <li class="two">Read </li>
+        <li class="one">Eat Dinner</li>
+        <li attr = "attribute">Watch Tv</li>
+        <li class="two">Sleep</li>
+    </ul>
+
+    <ol>
+        <li>Another Task</li>
+        <li>Man I'm So Happy</li>
+    </ol>
+
+    <script>
+        // jQuery allows programmers to select elements in the DOM
+        
+        $("li").css("font-weight", "bold");
+
+        $(".two").css("text-decoration", "line-through");
+
+        $("#first").css("color", "pink");
+
+        $("[attr]").css("color", "red");
+
+        $("ol li").css("font-size", "20px");
+        
+    </script>
+</body>
+</html>
