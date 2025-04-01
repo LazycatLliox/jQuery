@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using .each in jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>Do Homework</li>
+        <li>Read</li>
+        <li>Eat Dinner</li>
+        <li>Play Cyberpunk</li>
+        <li>Sleep</li>
+    </ul>
+
+    <script>
+        console.log("Iterating using each");
+        $("li").each(function(index){
+            var toDo = $(this).text();
+            index++
+            //check console to see results
+            console.log(index+ ". " + toDo);
+        });
+ 
+
+    </script>
+</body>
+</html>
