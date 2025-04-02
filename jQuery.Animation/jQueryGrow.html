@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.animate grow</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        div {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            background-color: purple;
+            position: relative;
+        }
+
+        #grow{
+            margin-bottom: 5px;
+            margin-left: 45%;
+        }
+
+        #animate
+		    {
+		        margin-bottom:5px;
+		        margin-left:45%;
+		    }
+
+            #box2{
+		        margin-left:40%;
+		        margin-top: 30%;
+		        height: 50px;
+		        width: 50px;
+		        border:solid 1px black;
+		        background-color:purple;
+		    }
+		    
+		    #hide{
+		        margin-bottom:5px;
+		        margin-left:15%;
+		    }
+           
+		    #show{
+		        margin-bottom:5px;
+		        margin-left:15%;
+		    }
+            
+		    #toggle{
+		        margin-bottom:5px;
+		        margin-left:15%;
+		    }
+
+    </style>
+</head>
+<body>
+    <button id="grow">Grow</button>
+
+    <div></div>
+    <br><br>
+    <button id="animate">Start Animation</button>
+    <div id="box"></div>
+
+    <button id = hide>Hide</button>
+    <button id = show>Show</button>
+    <button id = toggle>Toggle</button>
+
+    <div id="box2"></div>
+    
+    <script>
+        $("#grow").click(function(){
+            $("div").animate({height: "300px", width: "300px"}, "slow");
+        });
+
+
+        $("#animate").click(function(){
+                
+                //Animations that occur one after another are queued
+                //Animations will occur ONE by ONE!
+                $("#box").animate({height: "300px", width: "300px"}, "slow");
+                $("#box").animate({height: "50px", width: "50px"}, "slow");
+                //The item being moved must be in position relative or absolute!
+                $("#box").animate({left:"400px"}, "slow");
+                $("#box").animate({left:"0px"}, "slow");
+            });
+
+        
+            
+        $("#hide").click(function(){
+            $("#box2").hide("slow");
+        })
+        $("#show").click(function(){
+            $("#box2").show("slow");
+        })
+        $("#toggle").click(function(){
+            $("#box2").toggle("slow");
+        })
+    </script>
+</body>
+</html>
